@@ -71,28 +71,38 @@ public class ClockDriver
         String tests4Output = tests4.getTime();
         System.out.println("\t Arg Con. Test - "+tests4Output);
         /*CHALLENGE*/
+               System.out.println("Testing 12 Hour Clock Display:");
         //Implement tests for your ClockDisplay12Hour
         //  * Test that you can do the basics
         //      * Empty constructor & read time
+        ClockDisplay12Hour test1_12 = new ClockDisplay12Hour();
+        System.out.println("\tEmpty Con. Test - " + test1_12.getTime());
         //      * Constructor w/ time given & read time
+        ClockDisplay12Hour test2_12 = new ClockDisplay12Hour(2, 45, false);
+        System.out.println("\t2 Arg Con. Test - " + test2_12.getTime());
         //      * Set time
         //      * Read time
         //      * Tick time
-        //  * Tick test for 03:32PM to 03:33PM
-        //  * Tick test for 11:59PM to 12:00AM
-        //  * Tick test for 11:59AM to 12:00PM
-        //  * Tick test for 12:59PM to 01:00PM
-       //*testing clock display:
-	/*Empty Con. Test - 00:00
-	 Arg Con. Test - 03:32
-	 Arg Con. Test - 03:09
-	 Arg Con. Test - 00:00
-	 Arg Con. Test - 03:32
-    testing clock display sec:
-	Empty Con. Test - 00:00:00
-	 Arg Con. Test - 03:32:59
-	 Arg Con. Test - 01:59:59
-	 Arg Con. Test - 23:59:59(*/
-        
-    }
-}
+        // Tick test for 03:32 PM to 03:33 PM
+        ClockDisplay12Hour tickTest1_12 = new ClockDisplay12Hour(3, 32, false);
+        System.out.println("\tTickTest1 Before increment - " + tickTest1_12.getTime());
+        tickTest1_12.timeTick();
+        System.out.println("\tTickTest1 After increment - " + tickTest1_12.getTime());
+
+        // Tick test for 11:59 PM to 12:00 AM
+        ClockDisplay12Hour tickTest2_12 = new ClockDisplay12Hour(11, 59, false);
+        System.out.println("\tTickTest2 Before increment - " + tickTest2_12.getTime());
+        tickTest2_12.timeTick();
+        System.out.println("\tTickTest2 After increment - " + tickTest2_12.getTime());
+
+        // Tick test for 11:59 AM to 12:00 PM
+        ClockDisplay12Hour tickTest3_12 = new ClockDisplay12Hour(11, 59, true);
+        System.out.println("\tTickTest3 Before increment - " + tickTest3_12.getTime());
+        tickTest3_12.timeTick();
+        System.out.println("\tTickTest3 After increment - " + tickTest3_12.getTime());
+
+        // Tick test for 12:59 PM to 01:00 PM
+        ClockDisplay12Hour tickTest4_12 = new ClockDisplay12Hour(12, 59, false);
+        System.out.println("\tTickTest4 Before increment - " + tickTest4_12.getTime());
+        tickTest4_12.timeTick();
+        System.out.println("\tTickTest4 After increment - " + tickTest4_12.getTime());
