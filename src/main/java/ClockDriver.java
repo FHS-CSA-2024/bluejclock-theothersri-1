@@ -106,3 +106,6 @@ public class ClockDriver
         System.out.println("\tTickTest4 Before increment - " + tickTest4_12.getTime());
         tickTest4_12.timeTick();
         System.out.println("\tTickTest4 After increment - " + tickTest4_12.getTime());
+
+    }
+}
